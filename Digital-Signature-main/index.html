@@ -32,15 +32,29 @@
         <p class="mb-8">
           The Digital Signature Standard (DSS) is a Federal Information Processing
           Standard that defines the algorithms used to create and verify digital
-          signatures. DSS specifies the <strong>Digital Signature Algorithm (DSA)</strong>,
+          signatures. This implementation uses <strong>industry-standard algorithms</strong>
+          including <strong>DSA-2048</strong> and <strong>RSA-2048</strong> with <strong>SHA-256</strong> hashing,
           which provides <em>authentication</em>, <em>integrity</em>, and <em>non-repudiation</em> for
           electronic documents.
         </p>
+        <div class="card mb-16">
+          <div class="card__body">
+            <h3 class="mb-8">🔒 Security Features</h3>
+            <ul class="mb-8">
+              <li><strong>Industry-Standard Algorithms:</strong> DSA/RSA-2048 with SHA-256</li>
+              <li><strong>Cryptographically Secure:</strong> Proper entropy generation for key pairs</li>
+              <li><strong>Complete Verification:</strong> Full signature and integrity validation workflow</li>
+              <li><strong>Privacy Protection:</strong> Private keys never exposed in signed documents</li>
+              <li><strong>Client-Side Processing:</strong> All operations performed locally for maximum security</li>
+            </ul>
+          </div>
+        </div>
         <h3 class="mb-8">How does it work?</h3>
         <ol class="workflow-list mb-16">
-          <li><strong>Key Generation</strong> – generate secure parameters <code>p, q, g</code> and a key pair (<code>x</code>, <code>y</code>).</li>
-          <li><strong>Signing</strong> – hash the document with SHA-256, then compute signature components <code>(r, s)</code> using the private key.</li>
-          <li><strong>Verification</strong> – recompute the hash and verify <code>(r, s)</code> using the public key.</li>
+          <li><strong>Secure Key Generation</strong> – Generate cryptographically secure 2048-bit key pairs with sufficient entropy. For DSA: parameters <code>p, q, g</code> and key pair (<code>x</code>, <code>y</code>). For RSA: modulus <code>n</code>, public exponent <code>e</code>, and private exponent <code>d</code>.</li>
+          <li><strong>Document Hashing & Signing</strong> – Hash the document using SHA-256 (256-bit digest), then compute digital signature using the private key. DSA produces signature components <code>(r, s)</code>, RSA produces encrypted hash.</li>
+          <li><strong>Signature Verification</strong> – Independently recompute the document hash and verify the signature using the corresponding public key, ensuring both integrity and authenticity.</li>
+          <li><strong>Security Validation</strong> – Verify that private keys are never exposed and all cryptographic operations use industry-standard parameters.</li>
         </ol>
         <p class="status status--info">
           Explore the tabs above to generate keys, sign documents, and verify
@@ -50,11 +64,13 @@
 
       <!-- KEY GENERATION SECTION -->
       <section id="keys" class="app-section container hidden">
-        <h2 class="mb-16">DSA Key Generation</h2>
+        <h2 class="mb-16">🔐 Secure Key Generation</h2>
         <div class="card mb-16">
           <div class="card__body">
             <button id="generateKeysBtn" class="btn btn--primary mb-16">Generate 2048-bit Key Pair</button>
-            <p class="text-small mb-8">Parameters comply with FIPS 186-4 using SHA-256.</p>
+            <div class="status status--info mb-8">
+              <strong>Security Standards:</strong> FIPS 186-4 compliant • 2048-bit key strength • SHA-256 hashing • Cryptographically secure entropy
+            </div>
             <div id="keyOutput" class="key-output"></div>
             <div class="flex gap-16 mt-8">
               <button id="downloadPrivateBtn" class="btn btn--secondary btn--sm" disabled>Download Private Key</button>
@@ -73,7 +89,10 @@
 
       <!-- SIGNING SECTION -->
       <section id="sign" class="app-section container hidden">
-        <h2 class="mb-16">Sign a Document</h2>
+        <h2 class="mb-16">🖊️ Secure Document Signing</h2>
+        <div class="status status--success mb-16">
+          <strong>Security Guarantee:</strong> Your private key remains secure and is never included in the signed document bundle.
+        </div>
         <div class="card mb-16">
           <div class="card__body flex flex-col gap-16">
             <div class="flex gap-16 items-center">
@@ -98,7 +117,10 @@
 
       <!-- VERIFICATION SECTION -->
       <section id="verify" class="app-section container hidden">
-        <h2 class="mb-16">Verify Signature</h2>
+        <h2 class="mb-16">✅ Complete Signature Verification</h2>
+        <div class="status status--info mb-16">
+          <strong>Verification Process:</strong> Validates both document integrity (SHA-256 hash) and signature authenticity (public key verification)
+        </div>
         <div class="card mb-16">
           <div class="card__body flex flex-col gap-16">
             <label class="btn btn--outline btn--sm">
