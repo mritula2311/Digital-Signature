@@ -1,0 +1,22 @@
+{
+  "document": {
+    "filename": "fakefile.txt",
+    "content": "SGVsbG8gdGhpcyBpcyBhIGZha2UgZG9jdW1lbnQu",
+    "contentType": "text/plain",
+    "size": 28,
+    "hash": "a1111b2222c3333d4444e5555f6666a7777b8888c9999d0000e1111f2222a333"
+  },
+  "signature": {
+    "signature": "deadbeefcafebabe1234567890abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "algorithm": "RSA-2048",
+    "timestamp": "2025-09-27T18:15:00.000Z"
+  },
+  "publicKey": {
+    "type": "RSA",
+    "data": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArandomkeythatisnotreal\nn3v4r2gkYv7v5f6u2d8h4n8k1l0o2p3w4x5c6v7b8n9m0q1w2e3r4t5y6u7i8o9p0\nQ1W2E3R4T5Y6U7I8O9P0a1s2d3f4g5h6j7k8l9q0w1e2r3t4y5u6i7o8p9a0s1d2\nW3E4R5T6Y7U8I9O0P1A2S3D4F5G6H7J8K9L0Q1W2E3R4T5Y6U7I8O9P0A1S2D3F4\nG5H6J7K8L9Q0W1E2R3T4Y5U6I7O8P9A0S1D2F3G4H5J6K7L8Q9W0E1R2T3Y4U5I6\nO7P8A9S0D1F2G3H4J5K6L7Q8W9E0R1T2Y3U4I5O6P7A8S9D0F1G2H3J4K5L6Q7W8\nE9R0T1Y2U3I4O5P6A7S8D9F0G1H2J3K4L5Q6W7E8R9T0Y1U2I3O4P5A6S7D8F9G0\n-----END PUBLIC KEY-----"
+  },
+  "metadata": {
+    "version": "1.0",
+    "created": "2025-09-27T18:15:15.000Z"
+  }
+}
